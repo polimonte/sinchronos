@@ -1,19 +1,33 @@
-import { useForm } from 'react-hook-form';
-import '../App.css';
-import { Box, Button, TextField } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 
-export default function Login() {
+import { Box, Button, TextField, Typography } from '@mui/material';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Login.css';
+
+const Login: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const { register, handleSubmit } = useForm();
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [error, setError] = useState<string>('');
 
-  const onSubmit = (data: unknown) => {
-    console.log(data);
-  }
-
-
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      if (user.email === email && user.password === password) {
+        setError('');
+        console.log('Login successful!');
+        navigate("/ponto", { state: { nomeCompleto: user.nomeCompleto } });
+      } else {
+        setError('E-mail ou senha inválidos.');
+      }
+    } else {
+      setError('Nenhum usuário encontrado.');
+    }
+  };
   return (
     <Box
       component="form"
@@ -23,14 +37,18 @@ export default function Login() {
       noValidate
       autoComplete="off"
       className="form-container"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit}
     >
+      <h2>Entrar</h2>
+
       <div>
         <TextField
           required
-          label="E-mail"
           placeholder="E-mail"
-          {...register('e-mail')}
+          className='input login'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+
         />
       </div>
       <div>
@@ -38,22 +56,34 @@ export default function Login() {
           required
           id="password-input password"
           type="password"
-          label="Senha"
           placeholder="Senha"
-          {...register('password')}
+          className='input login'
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div>
-        <Button variant="contained" type="submit" onClick={() => navigate("/ponto")}>Entrar</Button>
+        {error && (
+          <Typography color="error" variant="body2" className='mensagem-erro'>
+            {error}
+          </Typography>
+        )}
       </div>
-
       <div>
         <p><a href="/recuperar-senha">Esqueci a senha</a></p>
+      </div>
+      <div>
+        <Button variant="contained" type="submit" onClick={() => handleSubmit}>Entrar</Button>
+      </div>
+
+      <div style={{ textAlign: 'center' }}>
         <p>Primeiro acesso?&nbsp;<a href="" onClick={() => navigate("/cadastro")}>Cadastre-se aqui</a></p>
       </div>
-      
+
     </Box>
 
 
   );
 }
+
+export default Login;

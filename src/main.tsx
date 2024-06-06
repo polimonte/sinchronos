@@ -9,10 +9,12 @@ import Login from './pages/Login.tsx';
 import Cadastro from './pages/Cadastro.tsx';
 import Recuperar from './pages/Recuperar.tsx';
 import Ponto from './pages/Ponto.tsx';
+import Corrigir from './pages/Corrigir.tsx';
+import Historico from './pages/Historico.tsx';
+import Confirmação from './pages/Confirmação.tsx';
+import Justificativa from './pages/Justificar.tsx';
 
 const router = createBrowserRouter([
-  
-  
   {
     path: "/",
     element: <Home />,
@@ -33,6 +35,23 @@ const router = createBrowserRouter([
     path: "/ponto",
     element: <Ponto />,
   },
+  {
+    path: "/corrigir",
+    element: <Corrigir />,
+  },
+  {
+    path: "/historico",
+    element: <Historico />,
+  },
+  {
+    path: "/Confirmação",
+    element: <Confirmação />,
+  },
+  {
+    path: "/Justificativa",
+    element: <Justificativa />,
+  }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -41,10 +60,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </React.StrictMode>,
 )
 
-function App (){
-  return(
-    <div className="App">
-      
-    </div>
-  )
-}
+

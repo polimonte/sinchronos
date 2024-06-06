@@ -1,21 +1,38 @@
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Cadastro.css';
 
-export default function Cadastro() {
+const Cadastro: React.FC = () => {
 
     const navigate = useNavigate();
+    const [nomeCompleto, setNomeCompleto] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [confirmPassword, setConfirmPassword] = useState<string>('');
+    const [error, setError] = useState<string>('');
 
-    const { register, handleSubmit } = useForm();
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
 
-    const onSubmit = (data: unknown) => {
-        console.log(data);
-    }
-
+        if (nomeCompleto && email && password) {
+            if (password !== confirmPassword) {
+                setError('As senhas não podem ser diferentes.');
+                return;
+            }
+            const userData = { nomeCompleto, email, password };
+            localStorage.setItem('user', JSON.stringify(userData));
+            setError('');
+            console.log('User data saved to localStorage:', userData);
+            navigate("/login");
+        } else {
+            setError('Todos os campos não obrigatórios.');
+        }
+    };
     return (
-        
+
         <Box
             component="form"
             sx={{
@@ -23,41 +40,60 @@ export default function Cadastro() {
             }}
             noValidate
             autoComplete="off"
-            className="form-container"
-            onSubmit={handleSubmit(onSubmit)}
+            className="form-container-cadastro"
+            onSubmit={handleSubmit}
         >
+            <h2>Vamos começar?</h2>
             <div >
                 <TextField
-                    required
-                    label="Nome Completo"
+                    label=""
                     placeholder="Nome Completo"
-                    {...register('nome')}
+                    value={nomeCompleto}
+                    onChange={(e) => setNomeCompleto(e.target.value)}
+                    className='white-input'
                 />
             </div>
             <div>
                 <TextField
-                    required
-                    id="standard-error-helper-text"
-                    label="E-mail"
+                    label=""
                     placeholder="E-mail"
-                    {...register('e-mail')}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className='white-input'
                 />
             </div>
             <div>
                 <TextField
-                    required
                     id="password-input password"
                     type="password"
-                    label="Senha"
                     placeholder="Senha"
-                    helperText="Senha deve possuir no mínimo 8 caracteres"
-                    {...register('password')}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className='white-input'
+                />
+
+                <TextField
+                    id="confirm-password-input password"
+                    type="password"
+                    placeholder="Confirmar senha"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    className='white-input'
                 />
             </div>
             <div>
-                <Button variant="contained" type="submit" onClick={() => navigate("/login")}>Cadastrar</Button>
+                {error && (
+                    <Typography color="error" variant="body2" className='mensagem-erro'>
+                        {error}
+                    </Typography>
+                )}
+            </div>
+
+            <div>
+                <Button variant="contained" type="submit" onClick={() => handleSubmit}>Cadastrar</Button>
             </div>
         </Box >
     );
 }
 
+export default Cadastro;

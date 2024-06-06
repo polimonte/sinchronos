@@ -1,0 +1,41 @@
+.corrigir-container {
+    background-color: #330a34;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .corrigir-title {
+    color: white;
+  }
+  
+  .corrigir-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .corrigir-label {
+    color: white;
+  }
+  
+  .corrigir-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .corrigir-button {
+    background-color: #ffffff;
+    color: #330a34;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+  

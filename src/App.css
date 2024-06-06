@@ -1,32 +1,14 @@
-body {
+
+ body {
   background: #330A34;
   font-family: Arial, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-}
-
-.form-container {
-  display: grid;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 20px;
-  box-shadow: none;
-  width: 500px;
-  height: auto;
-  margin-right: 0;
-  margin-left: auto;
-  box-sizing: border-box;
-}
+} 
 
-.form-container a {
-  font-size: 12px;
-  color: #04724D;
-}
 
 .links-container {
   display: flex;
@@ -41,41 +23,19 @@ body {
   text-decoration: underline;
 }
 
-
-.input-login {
-  width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  border: 2px solid #330A34;
-  border-radius: 20px;
-}
-
 button[type="submit"] {
   display: flex;
   justify-content: center;
-  width: 70%;
+  text-transform: capitalize;
+  font-weight: bold;
+  width: 45%;
   padding: 10px;
   margin: 0 auto;
-  background-color: #81039B;
+  background-color: #330A34;
   color: #ffffff;
   border-radius: 30px;
   transition: background-color 0.3s ease;
 }
-
-
-button[type="submit"]:hover {
-  background-color: #81039B;
-}
-
-.recuperar-senha {
-  display: flex;
-  justify-content: center;
-  width: 70%;
-  padding: 10px;
-  margin: 0 auto;
-}
-
 
 a {
   text-decoration: none;
@@ -86,26 +46,8 @@ p {
   display: flex;
   justify-content: flex-end;
   font-size: 12px;
-  margin-top: 10px;
-  color: #5f5f5f;
-}
-
-.home-header {
-  font-family: 'Montserrat', sans-serif;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-right: 1150px;
-  padding: 0;
-  height: 50vh;
-  box-sizing: border-box;
-}
-
-.home-header h1 {
-  text-align: left;
-  font-size: 85px;
-  margin: 0;
+  margin-top: 4px;
+  color: #424242;
 }
 
 .button-home {

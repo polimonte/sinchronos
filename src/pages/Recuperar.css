@@ -1,0 +1,56 @@
+h2 {
+    text-align: center;
+    color: black;
+}
+
+.form-container-recuperar {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: none;
+    width: 450px;
+    height: auto;
+    margin-right: 0;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+.form-container-recuperar p {
+    color: #000000;
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.form-container-recuperar button[type="submit"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    width: 45%;
+    padding: 10px;
+    margin-top: 40px;
+    background-color: #330A34;
+    color: #ffffff;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+
+.white.input.recuperar .MuiInputBase-input {
+    color: rgb(0, 0, 0);
+    border: 2px solid #330A34;
+    border-radius: 50px;
+    outline: none;
+    padding: 10px;
+}
+
+.white.input.recuperar .MuiInputBase-input:focus {
+    border-color: #330A34;
+    border-radius: 50px;
+    outline: none;
+}
