@@ -9,6 +9,7 @@ import Recuperar from "../pages/Recuperar";
 import Ponto from "../pages/Ponto";
 import Confirmação from "../pages/Confirmação";
 import Justificativa from "../pages/Justificar";
+import Notificacoes from "../pages/Notificacoes";
 
 
 export default function PagesRoutes() {
@@ -20,8 +21,9 @@ export default function PagesRoutes() {
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/recuperar-senha" element={<Recuperar />} />
                 <Route path="/ponto" element={<Ponto />} />
-                <Route path="/Confirmação" element={<Confirmação />} />
-                <Route path="/Justificativa" element={<Justificativa />} />
+                <Route path="/confirmacao" element={<Confirmação />} />
+                <Route path="/justificativa" element={<Justificativa />} />
+                <Route path="/notificacoes" element={<Notificacoes />} />
             </Routes>
         </BrowserRouter>
     );

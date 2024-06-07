@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Justificar.css';
+import ComponenteMenu from '../shared/components/Menu';
 
 const Justificativa: React.FC = () => {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -24,25 +25,30 @@ const Justificativa: React.FC = () => {
     };
 
     return (
-        <div className="container-justify">
+        <div>
+            <div className='barra-menu'>
+            <ComponenteMenu nome="menu" classe='menu' />
+            </div>
+            <div className="container-justify">
                 <div className="date"></div>
-            
-            <div className="uploadBox">
-                <label htmlFor="fileUpload" className="uploadLabel">
-                    <span className="uploadIcon">📁</span>
-                    Insira aqui o arquivo
-                </label>
-                <input
-                    type="file"
-                    id="fileUpload"
-                    onChange={handleFileChange}
-                    className="input"
-                />
-                {fileName && <p className="fileName">{fileName}</p>}
-                <p className="instructions">*arquivo apenas em formato PDF ou DOCX</p>
-                <button onClick={handleFileUpload} className="button-justify">
-                    Enviar
-                </button>
+
+                <div className="uploadBox">
+                    <label htmlFor="fileUpload" className="uploadLabel">
+                        <span className="uploadIcon">📁</span>
+                        Insira aqui o arquivo
+                    </label>
+                    <input
+                        type="file"
+                        id="fileUpload"
+                        onChange={handleFileChange}
+                        className="input"
+                    />
+                    {fileName && <p className="fileName">{fileName}</p>}
+                    <p className="instructions">*arquivo apenas em formato PDF ou DOCX</p>
+                    <button onClick={handleFileUpload} className="button-justify">
+                        Enviar
+                    </button>
+                </div>
             </div>
         </div>
     );

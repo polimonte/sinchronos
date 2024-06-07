@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './MapTime.css'
+import { useNavigate } from 'react-router-dom';
 
 const CurrentDate: React.FC = () => {
+
+  const navigate = useNavigate();
+
+  const handleReturn = () => {
+    navigate('/ponto');
+  };
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   useEffect(() => {
@@ -31,7 +38,7 @@ const CurrentDate: React.FC = () => {
       <div className='date'>{formatDate(currentDateTime)}</div>
       <div className='address'>Av. República do Líbano, 251 Riomar Trade Center Torre 2, 29º andar - Pina, Recife - PE</div>
       <div className='time'>{formatTime(currentDateTime)}</div>
-      <button className="confirm-button">Confirmar Ponto</button>
+      <button className="confirm-button" onClick={handleReturn}>Confirmar Ponto</button>
     </div>
   );
 };

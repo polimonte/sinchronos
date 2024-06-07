@@ -1,4 +1,11 @@
-
+.barra-menu {
+    position: fixed;
+    display: flex;
+    justify-items: flex-end;
+    top: 0;
+    right: 0;
+    padding: 15px 30px;
+}
 .container-justify {
     display: flex;
     flex-direction: column;

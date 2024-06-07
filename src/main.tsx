@@ -13,6 +13,7 @@ import Corrigir from './pages/Corrigir.tsx';
 import Historico from './pages/Historico.tsx';
 import Confirmação from './pages/Confirmação.tsx';
 import Justificativa from './pages/Justificar.tsx';
+import Notificacoes from './pages/Notificacoes.tsx';
 
 const router = createBrowserRouter([
   {
@@ -44,12 +45,16 @@ const router = createBrowserRouter([
     element: <Historico />,
   },
   {
-    path: "/Confirmação",
+    path: "/confirmacao",
     element: <Confirmação />,
   },
   {
-    path: "/Justificativa",
+    path: "/justificativa",
     element: <Justificativa />,
+  },
+  {
+    path: "/notificacoes",
+    element: <Notificacoes />,
   }
 
 ]);

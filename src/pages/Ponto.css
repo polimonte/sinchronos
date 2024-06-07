@@ -70,3 +70,45 @@
     border-radius: 20px;
     margin-top: 20px;
 }
+
+
+@media (max-width: 768px) {
+    .ponto-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ponto-progress-container {
+        width: 50%;
+    }
+
+    .ponto-progress-text {
+        top: -40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ponto-header {
+        top: 20px;
+        left: 10px;
+        right: 10px;
+    }
+
+    .ponto-title,
+    .ponto-date {
+        font-size: 1.2em;
+    }
+
+    .ponto-progress-container {
+        width: 70%;
+    }
+
+    .ponto-progress-text {
+        top: -30px;
+    }
+
+    .ponto-button {
+        padding: 10px;
+        margin-top: 10px;
+    }
+}

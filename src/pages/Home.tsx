@@ -1,39 +1,42 @@
 import { Button, Menu, MenuItem } from '@mui/material';
 import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import bannerImage from '../assets/bannerhome.png';
+import './Home.css';
 
 export default function Home() {
-    const navigate = useNavigate();
-    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const navigate = useNavigate();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-    const handleClick = (event: MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
-    return (
-        <div style={{ position: 'relative', minHeight: '100vh' }}>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                Abrir menu
-            </Button>
-            <Menu
-                style={{ position: 'absolute', top: '50px', left: '50px' }}
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
-                <MenuItem onClick={() => { handleClose(); navigate("/login"); }}>Login</MenuItem>
-                <MenuItem onClick={() => { handleClose(); navigate("/cadastro"); }}>Cadastro</MenuItem>
-                <MenuItem onClick={() => { handleClose(); navigate("/Confirmação"); }}>Confirmação</MenuItem>
-                <MenuItem onClick={() => { handleClose(); navigate("/Justificativa"); }}>Justificativa</MenuItem>
-            </Menu>
-            <img src={bannerImage} alt="Banner" style={{ position: 'relative', bottom: 0, left: 0, width: '100%', maxHeight: '80vh', marginTop: '20px' }} />
-        </div>
-    );
+  const handleMenuItemClick = (path: string) => {
+    handleClose();
+    navigate(path);
+  };
+
+  return (
+    <div className="home-container">
+      <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        MENU
+      </Button>
+      <Menu
+        className="menu"
+        id="simple-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+      >
+        <MenuItem onClick={() => handleMenuItemClick("/login")}>Login</MenuItem>
+        <MenuItem onClick={() => handleMenuItemClick("/cadastro")}>Cadastro</MenuItem>
+      </Menu>
+      
+    </div>
+  );
 }
