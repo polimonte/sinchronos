@@ -2,6 +2,7 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
+import logo from '../assets/menu-principal.png';
 
 export default function Home() {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export default function Home() {
   return (
     <div className="home-container">
       <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        MENU
+      <img src={logo} alt="Logo" className="menu-logo" />
       </Button>
       <Menu
         className="menu"

@@ -7,31 +7,42 @@
   padding: 15px 30px;
 }
 
+.menu-logo {
+  width: 25px; 
+  height: auto;
+}
+
 .corrigir-container {
     background-color: #330a34;
     width: 100vw;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
     align-items: center;
+    justify-content: center;
     padding: 20px;
   }
   
   .corrigir-title {
-    color: white;
+    color: #330A34;
   }
   
   .corrigir-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    background-color: #ffffff;
+    padding: 60px;
+    border-radius: 50px;
+    box-shadow: none;
+    width: 450px;
+    height: auto;
+    margin-right: 0;
+    margin-left: auto;
+    box-sizing: border-box;
   }
   
   .corrigir-label {
-    color: white;
+    color: #330A34;
   }
   
   .corrigir-buttons {
@@ -40,11 +51,17 @@
   }
   
   .corrigir-button {
-    background-color: #ffffff;
-    color: #330a34;
+    background-color: #330A34;
+    color: #ffffff;
     padding: 15px;
     border: none;
     border-radius: 20px;
     margin-top: 20px;
+  }
+
+  .date-picker {
+    border: 2px solid #330A34;
+    border-radius: 50px;
+    padding: 10px;
   }
   

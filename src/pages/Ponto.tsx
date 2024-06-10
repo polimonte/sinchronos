@@ -2,19 +2,20 @@ import React, { useEffect } from 'react';
 import { useStopwatch } from 'react-timer-hook';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Ponto.css';
+import ComponenteMenu from '../shared/components/Menu';
 
 const Ponto: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = location;
-  const { 
-    seconds, 
-    minutes, 
-    hours, 
-    isRunning, 
-    start, 
-    pause, 
-    reset 
+  const {
+    seconds,
+    minutes,
+    hours,
+    isRunning,
+    start,
+    pause,
+    reset
   } = useStopwatch({ autoStart: false });
 
   const registrarPonto = () => {
@@ -54,9 +55,12 @@ const Ponto: React.FC = () => {
     <div className='ponto-container'>
       <div className='ponto-header'>
         <h1 className='ponto-title'>Bom dia, {location.state?.nomeCompleto || 'Usuário'}! ☺</h1>
-        <div>
+
+        <div className='data-menu'>
           <h4 className='ponto-date'>Sexta-feira,</h4>
           <h4 className='ponto-date'>07 Junho 2024</h4>
+
+          <ComponenteMenu classe='menu' />
         </div>
       </div>
       <div className='ponto-progress-container'>

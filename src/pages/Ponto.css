@@ -19,6 +19,12 @@
     right: 20px;
 }
 
+.data-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .ponto-title,
 .ponto-date {
     color: white;

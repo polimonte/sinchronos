@@ -7,14 +7,14 @@ body {
     margin: 0;
 }
 
-.container{
+.container {
     display: flex;
     height: 100%;
     width: 100%;
 }
 
 
-.Map-Container{
+.Map-Container {
     height: 695px;
     width: 800px;
     justify-content: center;
@@ -32,10 +32,30 @@ body {
     padding-left: 50px;
 }
 
-.date{
+.content button {
+    background-color: white;
+    color: hsl(299, 68%, 12%);
+    display: flex;
+    justify-content: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    width: 45%;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 30px;
+    cursor: pointer;
+
+}
+
+.content button:hover {
+    background-color: #f7cafa;
+}
+
+.date {
     font-size: 1em;
     margin-bottom: 30px;
 }
+
 .address {
     font-size: 1.0em;
     margin-bottom: 100px;
@@ -45,16 +65,4 @@ body {
 .time {
     font-size: 3em;
     margin-bottom: 20px;
-}
-.confirm-button {
-    font-size: 1.2em;
-    padding: 10px 20px;
-    background-color: white;
-    color: #340035;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.confirm-button:hover {
-    background-color: #ddd;
 }

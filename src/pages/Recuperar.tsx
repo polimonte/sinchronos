@@ -36,10 +36,21 @@ const Recuperar: React.FC = () => {
 
   return (
     <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '35ch' },
-      }}
+    component="form"
+    sx={{
+      '& .MuiTextField-root': { m: 1, width: '35ch' },
+      '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+          borderColor: 'transparent',
+        },
+        '&:hover fieldset': {
+          borderColor: 'transparent',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: 'transparent',
+        },
+      },
+    }}
       noValidate
       autoComplete="off"
       className="form-container"
@@ -73,7 +84,7 @@ const Recuperar: React.FC = () => {
           required
           id="password-input password"
           type="password"
-          placeholder="Senha"
+          placeholder="Confirmar senha"
           className='input login'
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
@@ -87,7 +98,7 @@ const Recuperar: React.FC = () => {
         )}
       </div>
       <div>
-        <Button variant="contained" type="submit" >Alterar a senha</Button>
+        <Button variant="contained" type="submit" >Alterar</Button>
       </div>
     </Box>
   );

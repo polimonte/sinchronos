@@ -34,10 +34,21 @@ const Cadastro: React.FC = () => {
     return (
 
         <Box
-            component="form"
-            sx={{
-                '& .MuiTextField-root': { m: 1, width: '35ch' },
-            }}
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '35ch' },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: 'transparent',
+            },
+            '&:hover fieldset': {
+              borderColor: 'transparent',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: 'transparent',
+            },
+          },
+        }}
             noValidate
             autoComplete="off"
             className="form-container-cadastro"

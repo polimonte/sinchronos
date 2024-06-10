@@ -11,10 +11,10 @@ const Historico: React.FC = () => {
   return (
     <div>
       <div className='barra-menu'>
+        <h1>Histórico</h1>
         <ComponenteMenu nome="menu" classe='menu' />
       </div>
       <div className='historico'>
-        <h1>Histórico</h1>
         <div className='historico-lista'>
           {dados.map((item, index) => (
             <div key={index} className='historico-dados'>

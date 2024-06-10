@@ -23,20 +23,6 @@
   text-decoration: underline;
 }
 
-button[type="submit"] {
-  display: flex;
-  justify-content: center;
-  text-transform: capitalize;
-  font-weight: bold;
-  width: 45%;
-  padding: 10px;
-  margin: 0 auto;
-  background-color: #330A34;
-  color: #ffffff;
-  border-radius: 30px;
-  transition: background-color 0.3s ease;
-}
-
 a {
   text-decoration: none;
   color: #04724D;

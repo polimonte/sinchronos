@@ -2,9 +2,9 @@ import { Button, Menu, MenuItem } from '@mui/material';
 import { MouseEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Menu.css';
+import logo from '../../assets/menu-principal.png';
 
 interface MyComponentProps {
-    nome: string; // Define nome prop as a string
     classe: string
 }
 
@@ -23,7 +23,7 @@ export default function ComponenteMenu(props: MyComponentProps) {
     return (
         <div className='{props.classe}'>
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                {props.nome}
+                <img src={logo} alt="Logo" className="menu-logo" />
             </Button>
             <Menu
                 id="simple-menu"
